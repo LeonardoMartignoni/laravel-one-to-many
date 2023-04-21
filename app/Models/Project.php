@@ -9,6 +9,10 @@ class Project extends Model
 {
     use HasFactory;
 
+    public function type() {
+        return $this->belongsTo(Type::class);
+    }
+
     public function getAbstract($max = 50) {
         return substr($this->description, 0, $max) . '...';
     }
