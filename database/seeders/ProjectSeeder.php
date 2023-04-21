@@ -23,6 +23,7 @@ class ProjectSeeder extends Seeder
             $new_project->title = $faker->company();
             $new_project->slug = Str::of($new_project->title)->slug('-');
             $new_project->description = $faker->paragraph(20);
+            $new_project->type_id = $faker->numberBetween(1, 5);
             $new_project->thumbnail = $faker->imageUrl(640, 480, 'project', true);
             $new_project->save();
         }
