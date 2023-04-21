@@ -21,6 +21,7 @@ class Project extends Model
         'title',
         'thumbnail',
         'description',
+        'type_id',
     ];
 
     public function getImageThumb() {

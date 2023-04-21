@@ -10,6 +10,15 @@
       <input type="text" class="form-control" id="title" name="title">
     </div>
     <div class="mb-3">
+      <label for="type_id" class="form-label">Type</label>
+      <select class="form-select" name="type_id" id="type_id">
+        <option value="">No type</option>
+        @foreach ($types as $type)
+          <option value="{{ $type->id }}">{{ $type->label }}</option>
+        @endforeach
+      </select>
+    </div>
+    <div class="mb-3">
       <label for="thumbnail" class="form-label">Thumbnail</label>
       <input type="file" class="form-control" id="thumbnail" name="thumbnail">
     </div>

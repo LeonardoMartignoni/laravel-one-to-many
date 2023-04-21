@@ -9,6 +9,7 @@
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Title</th>
+        <th scope="col">Type</th>
         <th scope="col">Description</th>
         <th scope="col">Thumbnail</th>
         <th scope="col">Actions</th>
@@ -19,6 +20,10 @@
         <tr>
           <th scope="row">{{ $project->id }}</th>
           <td>{{ $project->title }}</td>
+          <td>
+            <span class="badge rounded-pill"
+              style="background-color: {{ $project->type?->color ?? 'black' }}">{{ $project->type?->label ?? 'No type' }}</span>
+          </td>
           <td>{{ $project->getAbstract() }}</td>
           <td>{{ $project->thumbnail }}</td>
           <td>
